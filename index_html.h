@@ -49,11 +49,13 @@ const char index_html[] PROGMEM = R"rawliteral(
     <button onclick="runSim(1)">Reset</button>
     <button onclick="runSim(2)">Fault</button>
     <button onclick="runSim(3)">Daily Load</button>
-    <button onclick="runSim(4)">Load Drop</button>
+    <button onclick="runSim(4)">Solar Effect</button>
     <button onclick="runSim(5)">Load Ramp</button>
-    <button onclick="runSim(6)">Solar Effect</button>
+    <button onclick="runSim(6)">Load Drop</button>
     <button onclick="runSim(7)">Demo</button>
     <button onclick="runSim(8)">Uniform Load</button>
+    <button onclick="runSim(9)">Blackout</button>
+
   </div>
 
   <script>
