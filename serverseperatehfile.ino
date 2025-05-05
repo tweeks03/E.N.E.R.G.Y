@@ -24,7 +24,7 @@ bool case6_initialized = false;
 unsigned long case6_lastUpdate = 0;
 float case6_lerpAmount = 0.0;
 const int case6_order[7] = {0, 2, 6, 1, 5, 4, 3};
-const int case6_updateInterval = 100;
+const int case6_updateInterval = 200;
 const float case6_lerpStep = 0.05;
 
 
