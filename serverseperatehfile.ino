@@ -104,13 +104,13 @@ void setup() {
   Serial.println("Setting each NeoPixel strip to a different color...");
 
   // Example: Set each strip to a different color
-  setStripColor(0, 0, 255, 0);     // Green
-  setStripColor(1, 0, 0, 255);     // Blue
-  setStripColor(2, 0, 255, 255);     // Cyan
-  setStripColor(3, 255, 0, 0);   // Red
-  setStripColor(4, 255, 255, 0);   // Yellow
-  setStripColor(5, 255, 0,255);   // Magenta
-  setStripColor(6, 255, 255, 255); // White
+  setStripColor(0, 0, 128, 0);     // Green
+  setStripColor(1, 0, 0, 128);     // Blue
+  setStripColor(2, 0, 128, 128);     // Cyan
+  setStripColor(3, 128, 0, 0);   // Red
+  setStripColor(4, 128, 128, 0);   // Yellow
+  setStripColor(5, 128, 0,128);   // Magenta
+  setStripColor(6, 128, 128, 128); // White
 
 
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
@@ -151,9 +151,9 @@ void setup() {
         if (!alternate) {
           if(sim==7){
             if(index<=2){
-              setStripColor(index, 0, 255, 0); // Green for Main
+              setStripColor(index, 0, 128, 0); // Green for Main
             }else{
-              setStripColor(index, 255, 0, 0); // Red for Alternate
+              setStripColor(index, 128, 0, 0); // Red for Alternate
             }
             
           }else{
@@ -162,9 +162,9 @@ void setup() {
         } else {
             if(sim==7){
               if(index<=2){
-                setStripColor(index, 255, 0, 0); // Red for Alternate
+                setStripColor(index, 128, 0, 0); // Red for Alternate
               }else{
-                setStripColor(index, 0, 255, 0); // Green for Main
+                setStripColor(index, 0, 128, 0); // Green for Main
               }
             }else{
               setStripColor(index, r, g, b);
@@ -229,13 +229,13 @@ void loop() {
         strips[i].clear();   // Optional: Clear to blank first
         strips[i].show();
       }
-        setStripColor(0, 0, 255, 0);     // Green
-        setStripColor(1, 0, 0, 255);     // Blue
-        setStripColor(2, 0, 255, 255);     // Cyan
-        setStripColor(3, 255, 0, 0);   // Red
-        setStripColor(4, 255, 255, 0);   // Yellow
-        setStripColor(5, 255, 0,255);   // Magenta
-        setStripColor(6, 255, 255, 255); // White
+        setStripColor(0, 0, 128, 0);     // Green
+        setStripColor(1, 0, 0, 128);     // Blue
+        setStripColor(2, 0, 128, 128);     // Cyan
+        setStripColor(3, 128, 0, 0);   // Red
+        setStripColor(4, 128, 128, 0);   // Yellow
+        setStripColor(5, 128, 0,128);   // Magenta
+        setStripColor(6, 128, 128, 128); // White
 
         break;
 
@@ -252,7 +252,7 @@ void loop() {
         // Blink random pixel 5 times
         for (int i = 0; i < totalBlinks; i++) {
           bool on = (i % 2 == 0);
-          strips[stripIndex].setPixelColor(pixelIndex, on ? strips[stripIndex].Color(255, 0, 0) : 0);
+          strips[stripIndex].setPixelColor(pixelIndex, on ? strips[stripIndex].Color(128, 0, 0) : 0);
           strips[stripIndex].show();
           delay(500);
         }
@@ -260,7 +260,7 @@ void loop() {
         // After blinking, turn neighbors green and all others off
         for (int i = 0; i < strips[stripIndex].numPixels(); i++) {
           if (i == pixelIndex - 1 || i == pixelIndex + 1) {
-            strips[stripIndex].setPixelColor(i, strips[stripIndex].Color(0, 255, 0)); // Green neighbors
+            strips[stripIndex].setPixelColor(i, strips[stripIndex].Color(0, 128, 0)); // Green neighbors
           } else {
             strips[stripIndex].setPixelColor(i, 0); // Off everything else
           }
@@ -274,7 +274,7 @@ void loop() {
           if (i == pixelIndex) {
             strips[stripIndex].setPixelColor(i, 0); // Bad pixel stays OFF
           } else {
-            strips[stripIndex].setPixelColor(i, strips[stripIndex].Color(255, 0, 0)); // Normal green
+            strips[stripIndex].setPixelColor(i, strips[stripIndex].Color(128, 0, 0)); // Normal green
           }
         }
         strips[stripIndex].show();
@@ -435,10 +435,10 @@ delay(3000);
 
 for (int t = 0; t < 14; t++) {
   float brightnessFraction = brightnessLevels[t];
-  int brightnessValue = int(255 * brightnessFraction); // Convert to 0–255 scale
+  int brightnessValue = int(128 * brightnessFraction); // Convert to 0–255 scale
 
 for(int i = 0; i < 8; i++){ //set all lines
-  setStripColor(i, 255, 255, 255);  // cyan
+  setStripColor(i, 128, 128, 128);  // cyan
   strips[i].setBrightness(brightnessValue);
   strips[i].show();
  }
@@ -458,13 +458,13 @@ case 6: {
 
 
       case 7://finished
-        setStripColor(0, 0, 255, 0);     // Green
-        setStripColor(1, 0, 255, 0);     // Blue
-        setStripColor(2, 0, 255, 0);     // Cyan
-        setStripColor(3, 255, 0, 0);   // Red
-        setStripColor(4, 255, 0, 0);   // Yellow
-        setStripColor(5, 255, 0,0);   // Magenta
-        setStripColor(6, 255, 255, 255); // White
+        setStripColor(0, 0, 128, 0);     // Green
+        setStripColor(1, 0, 128, 0);     // Blue
+        setStripColor(2, 0, 128, 0);     // Cyan
+        setStripColor(3, 128, 0, 0);   // Red
+        setStripColor(4, 128, 0, 0);   // Yellow
+        setStripColor(5, 128, 0,0);   // Magenta
+        setStripColor(6, 128, 128, 128); // White
         break;
 
       case 8:
@@ -487,8 +487,8 @@ case 6: {
     // One-time setup
     if (!case6_initialized) {
       for (int i = 0; i < 7; i++) {
-        int hue = (i * 36) % 256;
-        currentColors[i] = strips[0].gamma32(strips[0].ColorHSV(hue * 256));
+        int hue = (i * 36) % 128;
+        currentColors[i] = strips[0].gamma32(strips[0].ColorHSV(hue * 128));
         targetColors[i] = currentColors[i];
       }
       case6_initialized = true;
@@ -523,6 +523,8 @@ case 6: {
       uint8_t r = r1 + (r2 - r1) * case6_lerpAmount;
       uint8_t g = g1 + (g2 - g1) * case6_lerpAmount;
       uint8_t b = b1 + (b2 - b1) * case6_lerpAmount;
+
+
 
       uint32_t interpolatedColor = (r << 16) | (g << 8) | b;
 
